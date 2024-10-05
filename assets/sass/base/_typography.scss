@@ -1,0 +1,26 @@
+@charset "UTF-8";
+
+html {
+
+    font-size: 62.5%;
+    font-display: swap;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: var(--font-family);
+    font-size: var(--font-md);
+    color: var(--text-800);
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text-950);
+    margin-bottom: var(--spacing-sm);
+}
+
+[class^="btn"] {
+
+    font-weight: 100;
+}

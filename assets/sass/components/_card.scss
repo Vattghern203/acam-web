@@ -1,0 +1,17 @@
+.services__card {
+
+   
+    padding: 1em;
+
+    border-radius: var(--round-sm);
+
+    border: var(--secondary-500) .1rem solid;
+
+    &__image {
+
+        height: 30%;
+        object-fit: cover;
+        object-position: center;
+        border-radius: var(--round-sm)
+    }
+}

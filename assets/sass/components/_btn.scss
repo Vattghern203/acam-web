@@ -1,0 +1,29 @@
+[class^="btn"] {
+    --_clr: var(--secondary-50);
+    
+    background-color: var(--_clr);
+    color: var(--text-950);
+
+    padding-inline: var(--spacing-sm);
+    padding-block: .8rem;
+
+    border-radius: .6rem;
+    border: none;
+    cursor: pointer;
+
+    transition: opacity .6s ease-in-out;
+
+    &:hover {
+
+        opacity: .75;
+    }
+}
+
+.btn {
+
+
+    &--cta {
+
+        background-color: var(--accent-400);
+    }
+}
