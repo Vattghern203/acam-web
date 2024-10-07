@@ -1,6 +1,11 @@
 section {
 
     max-width: var(--container-size);
+
+    &:not(.hero) {
+
+        margin-block-start: 32rem;
+    }
 }
 
 .hero {
@@ -39,7 +44,7 @@ section {
         overflow: hidden;
         width: 100%;
         height: 100%;
-        background-image: url(https://cat-milk.github.io/Anime-Girls-Holding-Programming-Books/static/3fd2e059888bb6cf984f2fb61cc303db/47126/Sakurajima_Mai_Holding_C_Programming_Language.png);
+        background-image: var(--main-hero);
         background-size: cover;
         background-position: center center;
     }
@@ -55,5 +60,145 @@ section {
         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
         grid-gap: var(--spacing-md);
         padding: var(--spacing-md);
+    }
+}
+
+// PORTFOLIO
+
+.portfolio {
+
+    container-type: inline-size;
+
+    &__container {
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap-reverse;
+        gap: var(--spacing-md);
+    }
+
+    &__grid {
+
+        display: grid;
+        grid-template-areas: 
+        "item1 item2 item3 item4";
+        //grid-template-columns: repeat(auto-fill, minmax(24rem, 1fr));
+        place-items: center;
+        gap: var(--spacing-sm);
+    }
+
+    &__carousel {
+
+        border-radius: var(--round-md);
+        overflow: hidden;
+        background-color: white;
+        
+        min-height: fit-content;
+        align-self: stretch;
+
+        position: relative;
+
+        &__overlay {
+
+            width: 100%;
+            height: 100%;
+
+            position: absolute;
+            inset: 0;
+
+            background-image: linear-gradient(
+            to top, rgba(0, 0, 0, .8) 12%, transparent 80%
+            );
+        }
+
+        &::before,
+        &::after {
+
+            content: "";
+            display: block;
+            height: 10%;
+            aspect-ratio: 1 / 1.5;
+            background-color: red;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0;
+
+            transition: opacity .6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        &::before {
+
+            left: 0;
+        }
+
+        &::after {
+
+            right: 0;
+        }
+
+        &:hover > :is(&::before, &::after) {
+
+            opacity: 1;
+        }
+
+        &__image {
+
+            width: 100%;
+            height: 100%;
+            border-radius: var(--round-md);
+            object-fit: cover;
+            object-position: center;
+            border: none;
+        }
+
+        &__nav {
+
+            display: flex;
+            gap: .5ch;
+        }
+
+        &__marker {
+
+            position: absolute;
+            bottom: 2.5%;
+            left: 50%;
+            transform: translateX(-50%);
+
+            &__link, &__link--current {
+
+                display: block;
+                width: 1ch;
+                height: 1ch;
+                border-radius: 50%;
+                background-color: var(--text-600);
+
+                &--current {
+
+                    background-color: var(--text-800);
+                }
+            }
+        }   
+    }
+
+}
+
+@container (width > 56.25em) {
+
+    .portfolio__grid {
+        grid-template-areas: 
+        "item1 item2" 
+        "item3 item4";
+
+        place-items: initial;
+    }
+
+    .portfolio__container {
+
+        & > * {
+
+            flex: 1;
+        }
     }
 }

@@ -27,12 +27,12 @@ a {
 
     &:is(:link, :visited) {
 
-        color: var(--text);
+        color: var(--text-800);
     }
 
     &:hover {
 
-        color: var(--primary);
+        color: var(--primary-500);
     }
 }
 
