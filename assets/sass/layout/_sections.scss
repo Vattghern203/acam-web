@@ -202,3 +202,78 @@ section {
         }
     }
 }
+
+// CONTACT 
+
+.contact {
+
+    &__content {
+
+        margin: 0 auto;
+        width: clamp(46rem, 50dvw, 50%);
+    }
+
+    &__form {
+
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        place-content: center;
+        gap: var(--spacing-sm);
+
+        &:is(:user-valid, :valid) > button {
+
+            pointer-events: all;
+            filter: opacity(100%);
+        }
+
+        &:is(:user-invalid, :invalid) > button {
+        
+            pointer-events: none;
+            filter: opacity(60%);
+        }
+
+        & > label {
+
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            grid-column: span 2;
+        }
+
+        &__input,
+        &__textarea {
+            font-size: 1.6rem;
+            appearance: none;
+            accent-color: var(--accent-900);
+            width: 100%;
+            padding: .8rem;
+            border-radius: var(--round-sm);
+            border: var(--secondary-500) .1rem solid;
+            background-color: transparent;
+
+            &:focus {
+
+                outline: none;
+            }
+
+            &:focus-visible {
+
+                outline-offset: var(--spacing-xsm);
+                outline-color: var(--primary-900);
+            }
+        }
+
+        &__textarea {
+
+            font-family: var(--font-family);
+            min-height: 32ch;
+            resize: vertical;
+            grid-column: span 4;
+        }
+
+        & > button {
+
+            grid-column: 2 / 4;
+        }
+    }
+}

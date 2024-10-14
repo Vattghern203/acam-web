@@ -38,7 +38,7 @@
                     </li>
 
                     <li>
-                        <a href="#">
+                        <a href="" tabindex="-1">
                             <button class="btn--cta">
                                 Contato
                             </button>
@@ -209,6 +209,65 @@
                         </span>
                     </div>
 
+                </div>
+
+            </section>
+
+            <section id="contact" class="contact">
+                <h2>Contact Us</h2>
+
+                <p>Enter in contact and make your idea come true.</p>
+
+                <div class="contact__content">
+
+                    <form class="contact__form">
+                        <label for="contact-name">
+                            Nome
+                            <input 
+                                type="text" 
+                                name="contact-name" 
+                                id="contact-name"
+                                class="contact__form__input"
+                                required 
+                                aria-required="true"
+                                placeholder="Seu nome..."
+                                aria-placeholder="Seu nome..."
+                            >
+                        </label>
+    
+                        <label for="">
+                            Email
+                            <input 
+                                type="email" 
+                                id="contact-email" 
+                                name="contact-email"
+                                class="contact__form__input" 
+                                required
+                                aria-required="true"
+                                placeholder="Seu email..."
+                                aria-placeholder="Seu email..."
+                            >
+                        </label>
+    
+                        <textarea 
+                            id="contact-message"
+                            class="contact__form__textarea"
+                            name="contact-message" 
+                            cols="64" 
+                            rows="12"
+                            minlength="4"
+                            pattern="[A-Za-z]{4,}"
+                            required
+                            aria-required="true"
+                            placeholder="Sua mensagem..."
+                            aria-placeholder="Sua mensagem..."
+                        >
+                        </textarea>
+    
+                        <button class="btn btn--cta" type="submit">
+                            Enviar
+                        </button>
+                    </form>
                 </div>
 
             </section>
