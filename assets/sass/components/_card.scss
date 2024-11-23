@@ -5,6 +5,7 @@
 
     border-radius: var(--round-sm);
     max-height: 36rem;
+    text-overflow: ellipsis;
 
     border: var(--secondary-200) .1rem solid;
 
@@ -21,15 +22,15 @@
     &__title {
 
         margin-block-start: .5em;
-        font-size: 2rem;
-        line-height: 1.2;
+        font-size: 1.6rem;
+        line-height: 1.6;
     }
 
     &__description {
 
         margin-block-start: 1em;
-        font-size: 1.6rem;
-        line-height: 1.6;
+        font-size: 1.25rem;
+        line-height: 1.4;
     }
 }
 
@@ -81,6 +82,7 @@
         position: absolute;
         bottom: 0;
         left: 0;
+        font-size: calc(1.2rem + .5dvw);
         margin-inline-start: 1em;
         z-index: 2;
         color: var(--text-800);
