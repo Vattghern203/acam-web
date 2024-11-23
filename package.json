@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch:sass": "sass assets/sass/main.scss assets/css/style.css --style=compressed -w"
+    "compile:sass": "sass assets/sass/main.scss assets/css/style.css --style=compressed", 
+    "watch:sass": "sass assets/sass/main.scss assets/css/style.css --style=compressed -w",
+    "prefix:css": "npm run compile:sass && postcss assets/css/style.css --use autoprefixer -b 'last 10 versions' -o assets/css/style.css"
   },
   "keywords": [],
   "author": "",
